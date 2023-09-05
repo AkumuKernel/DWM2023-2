@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Registro de Usuarios</title>
+ <link rel="stylesheet" href="css/normalize.css">
+ <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+ <header class="header">
+  <div class="container container-header">
+   <h1>Reality Show</h1>
+
+   <nav class="main-navegation">
+    <a href="registro.html">Registro</a>
+    <a href="ingreso.html">Ingresar</a>
+    <!-- <a href="#">Votaciones</a> -->
+   </nav>
+  </div>
+ </header>
+
+ <main class="container">
+  <h2></h2>
+  <form action="index.html" class="formulario" method="POST">
+   <legend>Registrate llenando los campos</legend>
+
+   <div class="container-fields">
+    <div class="field">
+     <label for="">Nombre de usuario</label>
+     <input type="text" class="input-text" name="nombre" placeholder="Username...">
+    </div>
+
+    <div class="field">
+     <label for="">Correo Electronico</label>
+     <input type="email" class="input-text" name="mail" placeholder="correo@correo.com">
+    </div>
+
+    <div class="field">
+     <label for="">Contraseña</label>
+     <input type="password" class="input-text" name="nombre" placeholder="Contraseña">
+    </div>
+
+    <div class="field">
+     <label for="">Confirme contraseña</label>
+     <input type="password" class="input-text" name="nombre" placeholder="Confirme Contraseña">
+    </div>
+   </div>
+
+   <div class="field">
+    <input type="submit" class="button" value="Registrarse">
+   </div>
+  </form>
+ </main>
+</body>
+</html>
