@@ -173,3 +173,41 @@ p{
  padding: 2rem;
  font-weight: var(--bold);
 }
+
+/* About */
+.about-page{
+ padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+ .about-page{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+ }
+}
+
+.content-about{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+@media (min-width: 768px) {
+ .content-about{
+  margin: 0;
+ }
+}
+
+.content-about h2{
+ margin-bottom: 2rem;
+}
+
+.content-about .limit{
+ color: var(--rosado);
+ font-weight: var(--bold);
+}
+
+.about-page .img{
+ width: 70%;
+}
