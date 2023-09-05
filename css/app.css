@@ -1,0 +1,175 @@
+/* Importación de la fuente */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;700;900&display=swap');
+
+/* Variables */
+:root{
+
+ /* Fonts */
+ 
+ --fontFamily: 'Montserrat', sans-serif;
+
+ /* Grosor del Font */
+
+ --flat: 300;
+ --regular: 400;
+ --bold: 700;
+ --mega_bold: 900;
+
+ /* Colores */
+
+ --morado: #d133ff;
+ --rosado: #ff33c7;
+ --amarillo: #fEf46d;
+ --negro: #000;
+ --blanco: #fff;
+}
+/* Global */
+html{
+ box-sizing: border-box;
+ font-size: 62.5%;
+}
+
+*, *:before, *:after {
+ box-sizing: inherit;
+}
+
+body{
+ font-size: 1.6rem;
+ font-family: var(--fontFamily);
+}
+
+body.fijar-body{
+ overflow: hidden;
+}
+
+img{
+ max-width: 100%;
+}
+
+a{
+ text-decoration: none;
+}
+
+p{
+ font-size: 2rem;
+ color: var(--negro);
+}
+
+.container{
+ max-width: 120rem;
+ width: 95%;
+ margin: 0 auto;
+}
+
+/* Header */
+
+.header{
+ background-color: var(--morado);
+}
+
+.header .container-header{
+ padding: 2.5rem 0;
+}
+
+@media (min-width: 480px) {
+ .header .container-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+}
+
+.header h1{
+ color: var(--blanco);
+ margin-bottom: 1rem;
+ text-align: center;
+}
+
+@media (min-width: 768px) {
+ .header h1{
+  margin-bottom: 0;
+ }
+}
+
+/* Navegación */
+
+.main-navegation{
+ display: flex;
+ gap: 2rem;
+ justify-content: center;
+}
+
+.main-navegation a{
+ color: var(--blanco);
+ font-size: 2rem;
+}
+.main-navegation a:hover{
+ color: var(--amarillo);
+}
+
+/* Video */
+
+.video{
+ position: relative;
+ max-height: 50rem;
+}
+
+@media (min-width: 480px) {
+ .video{
+  overflow: hidden;
+ }
+
+ .container-video h2{
+  font-size: 7rem;
+ }
+}
+
+.video .overlay{
+ position: absolute;
+ width: 100%;
+ height: 100%;
+
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2c43d6+0,9e37f2+66,ffffff+100&0.8+0,0.5+100 */
+ background: -moz-linear-gradient(top,  rgba(44,67,214,0.8) 0%, rgba(158,55,242,0.6) 66%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+ background: -webkit-linear-gradient(top,  rgba(44,67,214,0.8) 0%,rgba(158,55,242,0.6) 66%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(to bottom,  rgba(44,67,214,0.8) 0%,rgba(158,55,242,0.6) 66%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc2c43d6', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.video video{
+ display: block;
+ overflow: hidden;
+ width: 100vw;
+}
+
+.container-video{
+ display: flex;
+ align-items: center;
+ height: 100%;
+ position: relative;
+ z-index: 1;
+}
+
+.container-video h2{
+ display: flex;
+ flex-direction: column;
+ color: var(--blanco);
+ align-items: flex-start;
+}
+
+.container-video h2 span{
+ background-color: var(--rosado);
+ font-size: 2rem;
+ padding: 1rem 2rem;
+}
+
+.footer{
+ background-color: var(--rosado);
+ color: var(--blanco);
+ width: 100%;
+ text-align: center;
+ padding: 2rem;
+ font-weight: var(--bold);
+}
