@@ -6,11 +6,12 @@
  <title>Registro de Usuarios</title>
  <link rel="stylesheet" href="css/normalize.css">
  <link rel="stylesheet" href="css/app.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
  <header class="header">
   <div class="container container-header">
-   <h1>Reality Show</h1>
+   <h1><a href="index.html">Reality Show</a></h1>
 
    <nav class="main-navegation">
     <a href="registro.html">Registro</a>
@@ -22,33 +23,35 @@
 
  <main class="container">
   <h2></h2>
-  <form action="index.html" class="formulario" method="POST">
-   <legend>Registrate llenando los campos</legend>
-
-   <div class="container-fields">
-    <div class="field">
-     <label for="">Nombre de usuario</label>
-     <input type="text" class="input-text" name="nombre" placeholder="Username...">
+  <div class="forms">
+   <form action="index.html" class="formulario" method="POST">
+    <legend>Ingresa llenando los campos</legend>
+ 
+    <div class="container-fields">
+ 
+     <div class="field">
+      <label for="">Correo Electronico</label>
+      <input type="email" class="input-text" name="mail" placeholder="correo@correo.com">
+     </div>
+ 
+     <div class="field">
+      <label for="">Contraseña</label>
+      <input type="password" class="input-text" name="nombre" placeholder="Contraseña">
+     </div>
     </div>
-
+ 
     <div class="field">
-     <label for="">Correo Electronico</label>
-     <input type="email" class="input-text" name="mail" placeholder="correo@correo.com">
+     <div class="d-flex justify-content-end">
+      <a href="registro.html">¿No tienes cuenta? Registrate</a>
+     </div>
     </div>
-
     <div class="field">
-     <label for="">Contraseña</label>
-     <input type="password" class="input-text" name="nombre" placeholder="Contraseña">
+     <div class="d-flex justify-content-end">
+      <input type="submit" class="boton" value="Ingresar">
+     </div>
     </div>
-   </div>
-
-   <div class="field">
-    <a href="registro.html">¿No tienes cuenta? Registrate</a>
-   </div>
-   <div class="field">
-    <input type="submit" class="button" value="Ingresar">
-   </div>
-  </form>
+   </form>
+  </div>
  </main>
 </body>
 </html>

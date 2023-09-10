@@ -19,28 +19,36 @@
  /* Colores */
 
  --morado: #d133ff;
+ --moradoTransparente: #cf33ffcb;
  --rosado: #ff33c7;
  --rosa: #fe6d9d;
- --amarillo: #fEf46d;
+ --amarillo: #fef46d;
+ --amarilloOscuro: #ffd900;
  --azul: #3395ff;
  --verde: #019262;
  --negro: #000;
  --blanco: #fff;
- --gris: #dfdfdf;
+ --gris: #797979;
 }
 /* Global */
 html{
- box-sizing: border-box;
- font-size: 62.5%;
+ box-sizing: border-box!important;
+ font-size: 62.5%!important;
 }
 
 *, *:before, *:after {
- box-sizing: inherit;
+ box-sizing: inherit!important;
 }
 
 body{
- font-size: 1.6rem;
- font-family: var(--fontFamily);
+ font-size: 1.6rem!important;
+ font-family: var(--fontFamily)!important;
+ background-image: url(../img/wallpaper.jpg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ backdrop-filter: blur(2px);
+ height: 100vh;
 }
 
 body.fijar-body{
@@ -52,7 +60,7 @@ img{
 }
 
 a{
- text-decoration: none;
+ text-decoration: none!important;
 }
 
 p{
@@ -60,6 +68,9 @@ p{
  color: var(--negro);
 }
 
+h1, h2, h3{
+ font-weight: var(--bold)!important;
+}
 .container{
  max-width: 120rem;
  width: 95%;
@@ -69,7 +80,7 @@ p{
 /* Header */
 
 .header{
- background-color: var(--morado);
+ background-color: var(--moradoTransparente);
 }
 
 .header .container-header{
@@ -84,8 +95,11 @@ p{
  }
 }
 
-.header h1{
+.header h1 a{
  color: var(--blanco);
+}
+
+.header h1{
  margin-bottom: 1rem;
  text-align: center;
 }
@@ -169,15 +183,6 @@ p{
  padding: 1rem 2rem;
 }
 
-.footer{
- background-color: var(--rosado);
- color: var(--blanco);
- width: 100%;
- text-align: center;
- padding: 2rem;
- font-weight: var(--bold);
-}
-
 /* About */
 .about-page{
  padding: 5rem 0;
@@ -189,6 +194,13 @@ p{
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
  }
+}
+
+.about-page h2{
+ -webkit-animation: glow-rosa 1s ease-in-out infinite alternate;
+ -moz-animation: glow-rosa 1s ease-in-out infinite alternate;
+ animation: glow-rosa 1s ease-in-out infinite alternate;
+ color: var(--amarillo);
 }
 
 .content-about{
@@ -211,6 +223,9 @@ p{
 .content-about .limit{
  color: var(--rosado);
  font-weight: var(--bold);
+ -webkit-animation: glow-amarillo 1s ease-in-out infinite alternate;
+ -moz-animation: glow-amarillo 1s ease-in-out infinite alternate;
+ animation: glow-amarillo 1s ease-in-out infinite alternate;
 }
 
 .about-page .img{
@@ -221,9 +236,27 @@ p{
  margin: 0 auto;
 }
 
+.about-page .img img{
+ opacity: 90%;
+ border-radius: 5rem;
+}
+
+/* Carta */
+
+.carta{
+ padding: 1rem 2rem;
+ background-color: #ffffff62;
+ border-radius: 1rem;
+ transition: 0.3s;
+}
+
+.carta:hover{
+ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 /* Registro e inicio de sesion */
 
-.button{
+.boton{
  background-color: var(--morado);
  color: var(--blanco);
  padding: 1rem 3rem;
@@ -237,13 +270,21 @@ p{
  border: none;
 }
 
+.forms{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 80vh;
+}
+
 .formulario{
- background-color: var(--verde);
- width: min(60rem, 100%);
- margin: 0 auto;
- padding: 2rem;
- border: 1rem solid var(--negro);
- border-radius: 5rem;
+ background-color: rgba(0, 0, 0, 0.2);
+ backdrop-filter: blur(5px);
+ width: min(50rem, 100%);
+ margin: 10rem auto;
+ padding: 5rem 2rem;
+ box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .formulario legend{
@@ -252,22 +293,27 @@ p{
  text-transform: uppercase;
  font-weight: var(--bold);
  margin-bottom: 2rem;
- color: var(--gris);
+ color: var(--blanco);
 }
 
 .field{
  margin-bottom: 1rem;
 }
 
+.field input:not([type=submit]){
+ background-color: rgba(0, 0, 0, 0.5);
+ box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
 .field label{
- color: var(--blanco);
+ color: var(--amarillo);
  font-weight: var(--bold);
  margin-bottom: 0.5rem;
  display: block;
 }
 
 .field a{
- color: var(--amarillo);
+ color: var(--amarilloOscuro);
  font-weight: var(--bold);
 }
 
@@ -277,3 +323,40 @@ p{
  padding: 1.5rem;
  border-radius: 0.5rem;
 }
+
+.input-text::placeholder{
+ color: var(--blanco);
+}
+
+/* Footer */
+
+.footer{
+ background-color: var(--rosado);
+ color: var(--blanco);
+ width: 100%;
+ text-align: center;
+ padding: 2rem;
+ font-weight: var(--bold);
+}
+
+
+/* Animaciones */
+
+@keyframes glow-rosa {
+ from {
+   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #e60073, 0 0 4px #e60073, 0 0 5px #e60073, 0 0 6px #e60073, 0 0 7px #e60073;
+ }
+ to {
+   text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
+ }
+}
+
+@keyframes glow-amarillo {
+ from {
+   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff;
+ }
+ to {
+   text-shadow: 0 0 2px #fff, 0 0 3px #ffffcc, 0 0 4px #ffffcc, 0 0 5px #ffffcc, 0 0 6px #ffffcc, 0 0 7px #ffffcc, 0 0 8px #ffffcc;
+ }
+}
+
