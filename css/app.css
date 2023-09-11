@@ -534,6 +534,16 @@ h1, h2, h3{
  border-color: var(--rojoOscuro);
 }
 
+.votar input[type="radio"] + .checkmark svg{
+ opacity: 0;
+ transition: all 0.3s ease;
+}
+
+
+.votar input[type="radio"]:checked + .checkmark svg{
+ opacity: 1;
+}
+
 .field p{
  color: var(--amarillo);
  font-weight: var(--bold);
