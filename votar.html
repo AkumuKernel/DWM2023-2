@@ -20,55 +20,49 @@
   </div>
  </header>
   <main class="contenedor">
-   <table class="voto">
-    <tr>
-     <td>
-      <form action="index-login.html" method="get" class="votacion">
-       <legend>Vota seleccionando al concursante</legend>
-       
-       <table class="votaciones">
-        <tr>
-         <td>
-          <label for="consursante1" class="votar">
-           <input id="consursante1" type="radio" name="consursante" value="1">
-           <span class="checkmark"></span>
-         </td>
-         <td>Concursante 1</td>
-        </tr>
-        <tr>
-         <td>
-          <label for="consursante2" class="votar">
-           <input id="consursante2" type="radio" name="consursante" value="2">
-           <span class="checkmark"></span>
-         </td>
-         <td>Concursante 2</td>
-        </tr>
-        <tr>
-         <td>
-          <label for="consursante3" class="votar">
-           <input id="consursante3" type="radio" name="consursante" value="3">
-           <span class="checkmark"></span>
-         </td>
-         <td>Concursante 3</td>
-        </tr>
-        <tr>
-         <td>
-          <label for="consursante4" class="votar">
-           <input id="consursante4" type="radio" name="consursante" value="4">
-           <span class="checkmark"></span>
-         </td>
-         <td>Concursante 4</td>
-        </tr>
-       </table>
-       <div class="field">
-        <div class="d-flex justify-content-center">
-         <input type="submit" class="boton-rojo" value="Votar">
-        </div>
-       </div>
-      </form>
-     </td>
-    </tr>
-   </table>
+   <div class="voto">
+    <form action="index-login.html" method="get" class="votacion">
+     <legend>Vota seleccionando al concursante</legend>
+     
+     <div class="field">
+      <label for="consursante1" class="votar">
+       <input id="consursante1" type="radio" name="consursante" value="1">
+       <span class="checkmark"></span>
+      </label>
+      <p>Concursante 1</p>
+     </div>
+
+     <div class="field">
+      <label for="consursante2" class="votar">
+       <input id="consursante2" type="radio" name="consursante" value="2">
+       <span class="checkmark"></span>
+      </label>
+      <p>Concursante 2</p>
+     </div>
+
+     <div class="field">
+      <label for="consursante3" class="votar">
+       <input id="consursante3" type="radio" name="consursante" value="3">
+       <span class="checkmark"></span>
+      </label>
+      <p>Concursante 3</p>
+     </div>
+
+     <div class="field">
+      <label for="consursante4" class="votar">
+       <input id="consursante4" type="radio" name="consursante" value="4">
+       <span class="checkmark"></span>
+      </label>
+      <p>Concursante 4</p>
+     </div>
+     
+     <div class="field">
+      <div class="d-flex justify-content-center">
+       <input type="submit" class="boton-rojo" value="Votar">
+      </div>
+     </div>
+    </form>
+   </div>
   </main>
 </body>
 </html>

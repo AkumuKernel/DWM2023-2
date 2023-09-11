@@ -182,18 +182,22 @@ h1, h2, h3{
  height: 100%;
  position: relative;
  z-index: 1;
+ user-select: none;
 }
 
 .container-video h2{
- display: flex;
- flex-direction: column;
  color: var(--blanco);
  align-items: flex-start;
+ -webkit-animation: glow-morado 1s ease-in-out infinite alternate;
+ -moz-animation: glow-morado 1s ease-in-out infinite alternate;
+ animation: glow-morado 1s ease-in-out infinite alternate;
 }
 
-.container-video h2 span{
+.container-video p{
  background-color: var(--rosado);
+ color: var(--blanco);
  font-size: 2rem;
+ font-weight: bold;
  padding: 1rem 2rem;
 }
 
@@ -410,22 +414,20 @@ h1, h2, h3{
 
 /* Tablas */
 
-.tabla, .voto{
- margin: 0 auto;
- margin-top: 2rem;
- padding-top: 5rem;
+.tabla{
+ margin: 2rem auto;
  background-color: #0000004d;
 }
 
-.tabla thead, .voto thead{
+.tabla thead{
  color: var(--amarillo);
 }
 
-.tabla tbody, .voto tbody{
+.tabla tbody{
  color: var(--blanco);
 }
 
-.tabla th,.tabla td, .voto th,.voto td{
+.tabla th,.tabla td{
  padding: 2rem;
  text-align: center;
 }
@@ -446,6 +448,41 @@ h1, h2, h3{
  background-color: var(--blanco);
 }
 
+
+@media (max-width: 875px) {
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+ thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+		
+	td { 
+		border: none;
+		position: relative;
+		padding-left: 50%; 
+  text-align: right!important;
+  max-width: 95%;
+	}
+	
+	td:before { 
+		position: absolute;
+		left: 2rem;
+		white-space: nowrap;
+  color: var(--amarillo);
+  font-weight: var(--bold);
+	}
+ .tabla td:nth-of-type(1):before { content: "ID Evento"; text-align: left!important;}
+	.tabla td:nth-of-type(2):before { content: "Nombre de Evento"; text-align: left!important;}
+	.tabla td:nth-of-type(3):before { content: "Estado de Evento"; text-align: left!important;}
+	.tabla td:nth-of-type(4):before { content: "Fecha de Creación"; text-align: left!important;}
+ .tabla td:nth-of-type(5), td:nth-of-type(6){
+  text-align: center!important;
+ }
+}
+
 /* Votaciones y Detalles */
 
 .titulo{
@@ -460,6 +497,22 @@ h1, h2, h3{
 
 
 /* Votacion */
+
+.voto{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ margin: 2rem auto;
+ background-color: #0000004d;
+ padding: 5rem 0;
+}
+
+.voto .field{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
 
 .votar input[type="radio"] {
  display: none;
@@ -481,6 +534,10 @@ h1, h2, h3{
  border-color: var(--rojoOscuro);
 }
 
+.field p{
+ color: var(--amarillo);
+ font-weight: var(--bold);
+}
 /* Footer */
 
 .footer{
@@ -510,6 +567,15 @@ h1, h2, h3{
  }
  to {
    text-shadow: 0 0 2px #fff, 0 0 3px #ffffcc, 0 0 4px #ffffcc, 0 0 5px #ffffcc, 0 0 6px #ffffcc, 0 0 7px #ffffcc, 0 0 8px #ffffcc;
+ }
+}
+
+@keyframes glow-morado {
+ from {
+   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #800080, 0 0 4px #800080, 0 0 5px #800080, 0 0 6px #800080, 0 0 7px #800080;
+ }
+ to {
+   text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6, 0 0 9px #ff4da6;
  }
 }
 
