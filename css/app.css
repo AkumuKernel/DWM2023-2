@@ -19,13 +19,19 @@
  /* Colores */
 
  --morado: #d133ff;
+ --moradoOscuro: #a92bbe;
  --moradoTransparente: #cf33ffcb;
  --rosado: #ff33c7;
  --rosa: #fe6d9d;
+ --rojo: #f53756;
+ --rojoOscuro: #c12741;
  --amarillo: #fef46d;
  --amarilloOscuro: #ffd900;
+ --naranja: #ffae00;
+ --naranjaOscuro: #cc9400;
  --azul: #3395ff;
- --verde: #019262;
+ --verde: #4cb8b3;
+ --verdeOscuro: #3a938f; 
  --negro: #000;
  --blanco: #fff;
  --gris: #797979;
@@ -71,7 +77,7 @@ p{
 h1, h2, h3{
  font-weight: var(--bold)!important;
 }
-.container{
+.contenedor{
  max-width: 120rem;
  width: 95%;
  margin: 0 auto;
@@ -97,6 +103,14 @@ h1, h2, h3{
 
 .header h1 a{
  color: var(--blanco);
+ transition: 0.3s;
+}
+
+.header h1 a:hover{
+ -webkit-animation: glow-rosa 1s ease-in-out infinite alternate;
+ -moz-animation: glow-rosa 1s ease-in-out infinite alternate;
+ animation: glow-rosa 1s ease-in-out infinite alternate;
+ transition: 0.3s;
 }
 
 .header h1{
@@ -254,7 +268,8 @@ h1, h2, h3{
  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-/* Registro e inicio de sesion */
+
+/* Botones */
 
 .boton{
  background-color: var(--morado);
@@ -268,7 +283,71 @@ h1, h2, h3{
  border-radius: 0.5rem;
  text-align: center;
  border: none;
+ white-space: pre;
 }
+
+.boton:hover{
+ background-color: var(--moradoOscuro);
+}
+
+.boton-naranja{
+ background-color: var(--naranja);
+ color: var(--blanco);
+ padding: 0.5rem 2rem;
+ margin: 1rem 0 0 0;
+ font-size: 2rem;
+ text-decoration: none;
+ text-transform: uppercase;
+ font-weight: var(--bold);
+ border-radius: 0.5rem;
+ text-align: center;
+ border: none;
+ white-space: pre;
+}
+
+.boton-naranja:hover{
+ background-color: var(--naranjaOscuro);
+}
+
+.boton-verde{
+ background-color: var(--verde);
+ color: var(--blanco);
+ padding: 0.5rem 2rem;
+ margin: 1rem 0 0 0;
+ font-size: 2rem;
+ text-decoration: none;
+ text-transform: uppercase;
+ font-weight: var(--bold);
+ border-radius: 0.5rem;
+ text-align: center;
+ border: none;
+ white-space: pre;
+}
+
+.boton-verde:hover{
+ background-color: var(--verdeOscuro);
+}
+
+.boton-rojo{
+ background-color: var(--rojo);
+ color: var(--blanco);
+ padding: 1rem 3rem;
+ margin: 1rem 0 0 0;
+ font-size: 2rem;
+ text-decoration: none;
+ text-transform: uppercase;
+ font-weight: var(--bold);
+ border-radius: 0.5rem;
+ text-align: center;
+ border: none;
+ white-space: pre;
+}
+
+.boton-rojo:hover{
+ background-color: var(--rojoOscuro);
+}
+
+/* Registro e inicio de sesion */
 
 .forms{
  display: flex;
@@ -287,7 +366,7 @@ h1, h2, h3{
  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.formulario legend{
+.formulario legend, .votacion legend{
  text-align: center;
  font-size: 1.8rem;
  text-transform: uppercase;
@@ -322,10 +401,84 @@ h1, h2, h3{
  border: none;
  padding: 1.5rem;
  border-radius: 0.5rem;
+ color: var(--blanco);
 }
 
 .input-text::placeholder{
  color: var(--blanco);
+}
+
+/* Tablas */
+
+.tabla, .voto{
+ margin: 0 auto;
+ margin-top: 2rem;
+ padding-top: 5rem;
+ background-color: #0000004d;
+}
+
+.tabla thead, .voto thead{
+ color: var(--amarillo);
+}
+
+.tabla tbody, .voto tbody{
+ color: var(--blanco);
+}
+
+.tabla th,.tabla td, .voto th,.voto td{
+ padding: 2rem;
+ text-align: center;
+}
+
+.tabla thead tr, .tabla tbody tr:nth-child(2n){
+ background-color: #0000004d;
+}
+
+
+.blocked{
+ text-decoration: line-through!important;
+ text-decoration-thickness: 0.1rem!important;
+ cursor: not-allowed;
+ color: var(--negro);
+}
+
+.blocked:hover{
+ background-color: var(--blanco);
+}
+
+/* Votaciones y Detalles */
+
+.titulo{
+ color: var(--amarillo);
+ font-size: 5rem;
+}
+
+.evento{
+ color: var(--blanco);
+ font-size: 3.5rem;
+}
+
+
+/* Votacion */
+
+.votar input[type="radio"] {
+ display: none;
+}
+
+.votar .checkmark {
+ display: inline-block;
+ width: 5rem;
+ height: 5rem;
+ border: 0.2rem solid var(--azul);
+ border-radius: 50%;
+ vertical-align: middle;
+ margin-right: 1rem;
+ background-color: #fff;
+}
+
+.votar input[type="radio"]:checked + .checkmark {
+ background-color: var(--rojo);
+ border-color: var(--rojoOscuro);
 }
 
 /* Footer */
